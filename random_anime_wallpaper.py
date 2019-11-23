@@ -54,7 +54,7 @@ def key_protected(func):
 def random_anime_wallpaper():
     res = storage.get_list()
     while True:
-        choice = res[random.randint(0, len(res))]
+        choice = res[random.randint(0, len(res)-1)]
         print(choice)
         if choice["selected"] >=0: break
     
