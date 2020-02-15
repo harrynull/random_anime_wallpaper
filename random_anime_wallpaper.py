@@ -71,6 +71,10 @@ def update():
         storage.download(i)
     return 'ok'
     
+@app.route("/anime_wallpapers_public")
+def all_anime_wallpapers_public():
+    return jsonify(list(filter(lambda image: image['selected'] >= 0, storage.get_list())))
+    
 @app.route("/anime_wallpapers")
 @key_protected
 def all_anime_wallpapers():
